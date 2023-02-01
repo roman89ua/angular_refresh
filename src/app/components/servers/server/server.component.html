@@ -1,0 +1,10 @@
+<h2>{{ serverTitle }} works!!!</h2>
+<p>
+  Server with ID {{ serverId || 0 }} is
+  <span
+    [ngClass]="getServerStatusClass()"
+    [ngStyle]="{ color: getServerStatusColor() }"
+  >
+    {{ getServerStatus() }}
+  </span>
+</p>

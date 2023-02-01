@@ -1,0 +1,32 @@
+<h2>Servers component 222 works</h2>
+<label>Server Name: {{ serverName }}</label>
+<input
+  type="text"
+  class="form-control"
+  (input)="onUpdateServerName($event)"
+  placeholder="Server name"
+/>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName"
+  placeholder="Server name"
+/>
+<button
+  class="btn btn-primary"
+  [disabled]="!serverName"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<!--<p [innerText]="isServerAddAllowed"></p>-->
+<!--<p [innerText]="serverCreationStatus"></p>-->
+<p
+  *ngIf="wasServerCreated; else noServer"
+  [innerText]="serverCreationStatus"
+></p>
+<ng-template #noServer>
+  <p>No server was created yet</p>
+</ng-template>
+
+<div *ngFor="let server of servers" class="app-server"></div>

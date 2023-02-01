@@ -1,0 +1,32 @@
+<h3>Individual #1</h3>
+<ol>
+  <li>
+    Add a input field hich updates a property ('username') via Two-way-binding;
+  </li>
+  <li>
+    Output the user name via String interpolation (in a paragraph below the
+    input);
+  </li>
+  <li>
+    Add a button which may only be clicked if the username is NOT empty string;
+  </li>
+  <li>
+    Upon clicking the button, the username should be reset to an empty string;
+  </li>
+</ol>
+<h3>Result:</h3>
+<label>User name</label>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="username"
+  placeholder="user name"
+/>
+<p>{{ username }}</p>
+<button
+  class="btn btn-outline-info"
+  [disabled]="!username"
+  (click)="username = ''"
+>
+  Clear
+</button>
